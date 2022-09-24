@@ -6,5 +6,6 @@ RUN apk add g++
 RUN apk add gfortran
 RUN apk add cmake
 RUN apk add openblas
+RUN apk add pkgconfig
 
 RUN pip install piano_transcription_inference
