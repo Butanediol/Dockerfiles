@@ -12,4 +12,4 @@ RUN apt-get update && \
 
 VOLUME [ "/root/resources" ]
 
-CMD [ "sh -c python example.py --audio_path='$AUDIO_NAME' --output_midi_path='$MIDI_NAME'" ]
+CMD [ "/bin/sh -c /usr/local/bin/python example.py --audio_path=$AUDIO_NAME --output_midi_path=$MIDI_NAME" ]
