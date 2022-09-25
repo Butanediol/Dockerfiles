@@ -4,8 +4,8 @@ WORKDIR /root
 
 COPY example.mp3 example.py ./
 
-RUN apt update && \
-	apt install libsndfile1-dev ffmpeg && \
+RUN apt-get update && \
+	apt-get install -y libsndfile1-dev ffmpeg && \
 	pip install piano_transcription_inference torch && \
 	python example.py --audio_path='example.mp3' --output_midi_path='example.mid' && \
 	rm example.mp3 example.mid
