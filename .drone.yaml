@@ -9,6 +9,6 @@ steps:
         from_secret: docker_username
       password: 
         from_secret: docker_password
-      registry: registry.cn-hangzhou.aliyuncs.com
-      repo: registry.cn-hangzhou.aliyuncs.com/axeler4t0r/code-server
+      registry: registry.eu-central-1.aliyuncs.com
+      repo: registry.eu-central-1.aliyuncs.com/axeler4t0r/code-server
       tags: ci
