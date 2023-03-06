@@ -1,3 +1,14 @@
-# Dockerfiles
+# Notion AI WebUI
 
-See other branchess.
+## ENVs
+```
+NOTION_TOKEN=
+NOTION_SPACE_ID=
+```
+
+- How to get?
+https://github.com/Vaayne/NotionAI
+
+## Ports
+
+`7860`
