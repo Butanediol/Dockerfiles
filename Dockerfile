@@ -8,8 +8,8 @@ FROM python:3
 
 COPY --from=cloner /notionai /notionai
 WORKDIR /notionai/examples/webui
-RUN pip install -r requirements.txt && \
-	sed -i "s/debug=True/server_name='0.0.0.0'/g" app.py
+RUN pip install -r requirements.txt
+COPY app.py /notionai/examples/webui/
 
 EXPOSE 7860
 ENV NOTION_TOKEN=
