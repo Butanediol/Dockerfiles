@@ -12,6 +12,4 @@ RUN echo "**** install swift-lang ****" && \
     cd toolbox && \
     make install && \
     cd .. && \
-    rm -rf toolbox && \
-    echo "**** install rustup ****" && \
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    rm -rf toolbox
