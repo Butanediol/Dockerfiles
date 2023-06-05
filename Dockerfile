@@ -2,7 +2,7 @@ FROM gregyankovoy/alpine-base
 
 ARG build_deps="git build-base ncurses-dev autoconf automake git gettext-dev libmaxminddb-dev"
 ARG runtime_deps="nginx tini ncurses libintl libmaxminddb"
-ARG geolite_city_link="https://git.io/GeoLite2-City.mmdb"
+ARG geolite_city_link="https://cdn.jsdelivr.net/npm/geolite2-city@1.0.0/GeoLite2-City.mmdb.gz"
 
 WORKDIR /goaccess
 
@@ -20,7 +20,8 @@ RUN apk add --update --no-cache ${build_deps} && \
 # Get necessary runtime dependencies and set up configuration
 RUN apk add --update --no-cache ${runtime_deps} && \
     mkdir -p /usr/local/share/GeoIP && \
-    wget -q -O /usr/local/share/GeoIP/GeoLite2-City.mmdb ${geolite_city_link}
+    wget -q -O /usr/local/share/GeoIP/GeoLite2-City.mmdb.gz ${geolite_city_link} && \
+    gzip -d /usr/local/share/GeoIP/GeoLite2-City.mmdb.gz
 
 COPY /root /
 
