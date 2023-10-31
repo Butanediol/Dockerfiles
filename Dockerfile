@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install Tools
 RUN apt-get update && \
-	apt-get install -y zsh curl git ca-certificates gnupg apt-transport-https && \
+	apt-get install -y zsh curl git ca-certificates gnupg apt-transport-https openjdk-17-jdk && \
 	chsh --shell /usr/bin/zsh root
 
 # Install Code-Server
